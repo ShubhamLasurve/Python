@@ -1,0 +1,29 @@
+#Read the data in existing file
+#Reading the lines from the file
+import os
+
+def main():
+    print("Enter the name of file that you want to open for reading  purpose : ")
+    File_name = input()
+
+    if os.path.exists(File_name):       #hi method file ahe ki nahi check krte
+        fobj = open(File_name, "r")     #r mhanje file read mode madhe open (data baghayla)
+        if fobj:              #if(fobj == true)
+            print("File successfully opened in append mode") 
+
+            Line1 = fobj.readline()     #function to read the whole line 
+            Line2 = fobj.readline()
+            Line3 = fobj.readline()
+
+            print("First line is : ",Line1)
+            print("Second line is  : ",Line2)
+            print("Third line is : ",Line3)
+
+            fobj.close()  
+        else:
+            print("Unable to open file")        
+    else:
+        print("There is no such file")     
+
+if __name__ == "__main__":
+    main()
